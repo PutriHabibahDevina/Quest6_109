@@ -12,12 +12,16 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.praktikum6.ui.view.screen.MahasiswaFormView
+import com.example.praktikum6.ui.view.screen.MatakuliahView
 import com.example.praktikum6.ui.view.screen.SplashView
+import com.example.praktikum6.ui.view.screen.TampilView
 import com.example.praktikum6.ui.view.viewmodel.MahasiswaViewModel
 
 enum class Halaman{
     Splash,
-    Mahasiswa
+    Mahasiswa,
+    Matakuliah,
+    Tampil
 }
 
 @Composable
@@ -51,5 +55,17 @@ fun NavigationControl (
                 onBackButtonClicked = {navController.popBackStack()}
             )
         }
+        composable(
+            route = Halaman.Matakuliah.name
+        ){
+            MatakuliahView(
+                uiState = uistate,
+                onSubmitButtonClicked = {
+                    viewModel.setMatakuliah(it)
+                    navController.navigate(Halaman.Tampil.name)
+                },
+            )
+        }
+
     }
 }
