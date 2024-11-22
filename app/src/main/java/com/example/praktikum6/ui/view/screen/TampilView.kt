@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -19,11 +20,11 @@ import androidx.compose.ui.unit.dp
 import com.example.praktikum6.R
 import com.example.praktikum6.ui.model.Mahasiswa
 
-
-
 @Composable
 fun TampilView(
     uiState: Mahasiswa,
+    onBackButtonClicked: () -> Unit = {},
+    onResetButtonClicked: () -> Unit = {}
 ) {
     Column(
         modifier = Modifier
@@ -53,19 +54,30 @@ fun TampilView(
                 }
             }
             Spacer(modifier = Modifier.padding(16.dp))
-            Column (
+            Column(
                 modifier = Modifier.fillMaxWidth()
-            ){
+            ) {
                 Row() {
                     Text("Matakuliah yang diambil:")
                     Text(uiState.namamk)
                 }
-                Row(){
+                Row() {
                     Text(text = "Kelas:")
                     Text(uiState.kelas)
                 }
             }
-
+            Spacer(modifier = Modifier.padding(32.dp))
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceEvenly
+            ) {
+                Button(onClick = { onBackButtonClicked() }) {
+                    Text(text = "Kembali")
+                }
+                Button(onClick = { onResetButtonClicked() }) {
+                    Text(text = "Reset")
+                }
+            }
         }
     }
 }
