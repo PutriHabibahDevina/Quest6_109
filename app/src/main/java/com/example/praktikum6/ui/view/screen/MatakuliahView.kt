@@ -76,6 +76,44 @@ fun MatakuliahView(
                     fontWeight = FontWeight.Light
                 )
             }
+            Spacer(modifier = Modifier.padding(top = 16.dp))
+            Box(modifier = Modifier
+                .background(
+                    color = Color.White,
+                    shape = RoundedCornerShape(topEnd = 15.dp, topStart = 15.dp)
+                )
+                .fillMaxSize()
+            ){
+                Column (
+                    modifier = Modifier.fillMaxSize().padding(16.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally //Supaya tulisan di tengah
+                ){
+                    Text(text = "Masukkan Data Kamu", fontWeight = FontWeight.Bold, fontSize = 19.sp)
+                    Text(text = "Isi sesuai data yang kamu daftarkan", fontWeight = FontWeight.Light)
+
+                    Spacer(modifier = Modifier.padding(8.dp))
+                    OutlinedTextField(
+                        modifier = Modifier.fillMaxWidth(),
+                        value = namamk,
+                        onValueChange = {namamk = it},
+                        label = { Text(text = "Nama Matakuliah") },
+                        leadingIcon = {
+                            Icon(
+                                imageVector = Icons.Filled.Info,
+                                contentDescription = ""
+                            )
+                        },
+                        keyboardOptions = KeyboardOptions(
+                            keyboardType = KeyboardType.Text,
+                            imeAction = ImeAction.Next
+                        ),
+                        singleLine = true,
+                        shape = RoundedCornerShape(50.dp)
+
+                    )
+
+                }
+            }
         }
     }
 }
