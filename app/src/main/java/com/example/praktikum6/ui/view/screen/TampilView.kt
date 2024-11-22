@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -49,6 +50,19 @@ fun TampilView(
                 Column(
                 ) {
                     Text(uiState.email)
+                }
+            }
+            Spacer(modifier = Modifier.padding(16.dp))
+            Column (
+                modifier = Modifier.fillMaxWidth()
+            ){
+                Row() {
+                    Text("Matakuliah yang diambil:")
+                    Text(uiState.namamk)
+                }
+                Row(){
+                    Text(text = "Kelas:")
+                    Text(uiState.kelas)
                 }
             }
 
