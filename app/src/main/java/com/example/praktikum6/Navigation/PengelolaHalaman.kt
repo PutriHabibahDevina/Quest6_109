@@ -66,6 +66,14 @@ fun NavigationControl (
                 },
             )
         }
-
+        composable(
+            route = Halaman.Tampil.name
+        ){
+            TampilView(
+                uiState = uistate,
+                onBackButtonClicked = {navController.popBackStack()},
+                onResetButtonClicked = {navController.navigate(Halaman.Splash.name)}
+            )
+        }
     }
 }
