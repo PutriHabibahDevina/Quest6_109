@@ -48,9 +48,7 @@ fun TampilView(
                     Text(uiState.nim)
                     Text("Nama:")
                     Text(uiState.nama)
-                }
-                Column(
-                ) {
+                    Text("Email:")
                     Text(uiState.email)
                 }
             }
