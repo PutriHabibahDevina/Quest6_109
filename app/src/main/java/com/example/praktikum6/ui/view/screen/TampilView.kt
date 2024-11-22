@@ -43,6 +43,7 @@ fun TampilView(
             ) {
                 Column(
                 ) {
+                    Spacer(modifier = Modifier.padding(50.dp))
                     Text("Nim:")
                     Text(uiState.nim)
                     Text("Nama:")
