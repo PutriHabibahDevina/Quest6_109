@@ -48,11 +48,14 @@ fun TampilView(
                     Text(uiState.nim)
                     Text("Nama:")
                     Text(uiState.nama)
-                    Text("Email:")
+
+                }
+                Column {
+                    Spacer(modifier = Modifier.padding(50.dp))
                     Text(uiState.email)
                 }
             }
-            Spacer(modifier = Modifier.padding(16.dp))
+            Spacer(modifier = Modifier.padding(10.dp))
             Column(
                 modifier = Modifier.fillMaxWidth()
             ) {
