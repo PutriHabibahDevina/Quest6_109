@@ -111,7 +111,34 @@ fun MatakuliahView(
                         shape = RoundedCornerShape(50.dp)
 
                     )
+                    OutlinedTextField(
+                        modifier = Modifier.fillMaxWidth(),
+                        value = kelas,
+                        onValueChange = {kelas = it},
+                        label = { Text(text = "Kelas") },
+                        leadingIcon = {
+                            Icon(
+                                imageVector = Icons.Filled.Person,
+                                contentDescription = ""
+                            )
+                        },
+                        keyboardOptions = KeyboardOptions(
+                            keyboardType = KeyboardType.Text,
+                            imeAction = ImeAction.Next
+                        ),
+                        singleLine = true,
+                        shape = RoundedCornerShape(50.dp)
 
+                    )
+                    Spacer(modifier = Modifier.padding(16.dp))
+                    Row (
+                        modifier = Modifier.fillMaxSize(),
+                        horizontalArrangement = Arrangement.SpaceEvenly
+                    ){
+                        Button(onClick = {onSubmitButtonClicked(listData)}) {
+                            Text(text = "Simpan")
+                        }
+                    }
                 }
             }
         }
